@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Seja bem-vindo ao DB1 Password Meter</h2>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input id="password" class="form-control" type="text" ng-model="vm.password" ng-change="vm.changePass(this)" placeholder="senha" >
+            </div>
+            <strong class="meter_box meter_score">{{vm.score}}%</strong>
+            <strong class="meter_box meter_strength" ng-style="vm.strength_color">{{vm.strength}}</strong><br/><br/>
+            <table class="table table-striped">
+                <tr>
+                    <th>Adicionais</th>
+                    <th>Tipo</th>
+                    <th>Taxa</th>
+                    <th>Ocorrência</th>
+                    <th>Bonus</th>
+                </tr>
+                <tr ng-repeat="additions in vm.meter_additions ">
+                    <td>{{additions.name}}</td>
+                    <td>{{additions.type}}</td>
+                    <td>{{additions.rate}}</td>
+                    <td>{{additions.count}}</td>
+                    <td>{{additions.bonus}}</td>
+                </tr>
+                <tr>
+                    <th>Penalidades</th>
+                    <th>Tipo</th>
+                    <th>Taxa</th>
+                    <th>Ocorrência</th>
+                    <th>Bonus</th>
+                </tr>
+                <tr ng-repeat="deductions in vm.meter_deductions">
+                    <td>{{deductions.name}}</td>
+                    <td>{{deductions.type}}</td>
+                    <td>{{deductions.rate}}</td>
+                    <td>{{deductions.count}}</td>
+                    <td>{{deductions.bonus}}</td>
+                </tr>
+            </table>
+            <div class="panel panel-default">
+              <div class="panel-heading">Requisitos</div>
+              <div class="panel-body">
+                  <ul>
+                    <li>Mínimo de 8 caracteres</li>
+                    <li>Ter 3 dos 4 itens (letra maiúscula,letra minúscula, número,símbolo)</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+</div>

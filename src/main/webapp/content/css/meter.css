@@ -1,0 +1,8 @@
+.meter_box{
+    padding:5px 10px;
+    color:#fff;
+    background:gray;
+}
+.meter_strength{
+    background:red;
+}
